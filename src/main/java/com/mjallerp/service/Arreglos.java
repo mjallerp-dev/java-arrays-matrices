@@ -6,12 +6,11 @@ public class Arreglos {
 
     private int[] numeros = new int[10];
 
-    public int[] crearArreglo() {
+    public void crearArreglo() {
         Random random = new Random();
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = random.nextInt(100);
         }
-        return numeros;
     }
 
     public void mostrarConForClasico() {
