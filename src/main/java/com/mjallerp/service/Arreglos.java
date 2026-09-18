@@ -27,4 +27,18 @@ public class Arreglos {
             System.out.println(numero);
         }
     }
+
+    public void cambiarImparesPorCero() {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 != 0) {
+                numeros[i] = 0;
+            }
+        }
+    }
+
+    public void multiplicarPorIndice() {
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = numeros[i] * i;
+        }
+    }
 }
