@@ -41,4 +41,13 @@ public class Arreglos {
             numeros[i] = numeros[i] * i;
         }
     }
+
+    public int buscarLineal(int valor) {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == valor) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
