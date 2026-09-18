@@ -1,6 +1,7 @@
 package com.mjallerp;
 
 import com.mjallerp.service.Arreglos;
+import com.mjallerp.service.Matrices;
 
 import java.util.Scanner;
 
@@ -31,5 +32,8 @@ public class Main {
             System.out.println("No se encontró el valor");
         }
         scanner.close();
+
+        Matrices matrices = new Matrices();
+        matrices.crearMatriz();
     }
 }
