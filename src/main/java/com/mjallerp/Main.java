@@ -35,5 +35,7 @@ public class Main {
 
         Matrices matrices = new Matrices();
         matrices.crearMatriz();
+        matrices.mostrarComoTabla();
+        matrices.recorrerPorColumnas();
     }
 }
