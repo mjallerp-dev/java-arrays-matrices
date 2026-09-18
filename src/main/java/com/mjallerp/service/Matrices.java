@@ -34,4 +34,21 @@ public class Matrices {
             System.out.println();
         }
     }
+
+    public int sumarElementos() {
+        int suma = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                suma += matriz[i][j];
+            }
+        }
+        return suma;
+    }
+
+    public void intercambiarPrimeraYUltimaFila() {
+        int ultima = matriz.length - 1;
+        int[] temporal = matriz[0];
+        matriz[0] = matriz[ultima];
+        matriz[ultima] = temporal;
+    }
 }

@@ -37,5 +37,10 @@ public class Main {
         matrices.crearMatriz();
         matrices.mostrarComoTabla();
         matrices.recorrerPorColumnas();
+
+        System.out.println("Suma de elementos: " + matrices.sumarElementos());
+        matrices.intercambiarPrimeraYUltimaFila();
+        System.out.println("Primera y última fila intercambiadas:");
+        matrices.mostrarComoTabla();
     }
 }
