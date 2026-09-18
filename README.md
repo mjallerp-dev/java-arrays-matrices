@@ -73,7 +73,7 @@ Al arrancar aparece el menú:
 0. Salir
 ```
 
-Hay que **crear** el arreglo o la matriz (opción 1 del submenú) antes de las demás operaciones. En texto, primero **leer el párrafo** y luego **guardar palabras**.
+Hay que **crear** el arreglo o la matriz (opción 1 del submenú) antes de las demás operaciones. En texto, primero **leer el párrafo** (las palabras se guardan solas en el arreglo).
 
 ### Arreglos (opción 1)
 
@@ -93,10 +93,8 @@ Hay que **crear** el arreglo o la matriz (opción 1 del submenú) antes de las d
 
 ### Analizar texto (opción 3)
 
-1. Leer párrafo, por ejemplo: `Hola, hola! Mundo. El mundo es bello, hola mundo.`
-2. Guardar palabras (minúsculas, sin puntuación).
-3. Mostrar el arreglo de palabras.
-4. Top 5 → en el ejemplo, `hola` (3) y `mundo` (3) primero.
+1. Leer párrafo, por ejemplo: `Hola, hola! Mundo. El mundo es bello, hola mundo.` (se normaliza y se guarda en el arreglo).
+2. Mostrar Top 5 de palabras frecuentes → en el ejemplo, `hola` (3) y `mundo` (3) primero.
 
 `0` vuelve al menú anterior o sale.
 

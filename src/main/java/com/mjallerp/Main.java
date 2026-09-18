@@ -16,7 +16,6 @@ public class Main {
         boolean arregloCreado = false;
         boolean matrizCreada = false;
         Texto texto = null;
-        boolean palabrasGuardadas = false;
         boolean salir = false;
 
         while (!salir) {
@@ -33,8 +32,7 @@ public class Main {
             } else if ("2".equals(opcion)) {
                 matrizCreada = menuMatrices(matrices, matrizCreada, scanner);
             } else if ("3".equals(opcion)) {
-                texto = menuTexto(scanner, analizador, texto, palabrasGuardadas);
-                palabrasGuardadas = texto != null && texto.getPalabras() != null && texto.getPalabras().length > 0;
+                texto = menuTexto(scanner, analizador, texto);
             } else if ("0".equals(opcion)) {
                 salir = true;
             } else {
@@ -137,15 +135,13 @@ public class Main {
         return creada;
     }
 
-    private static Texto menuTexto(Scanner scanner, AnalizadorTexto analizador, Texto texto, boolean palabrasGuardadas) {
+    private static Texto menuTexto(Scanner scanner, AnalizadorTexto analizador, Texto texto) {
         boolean volver = false;
         while (!volver) {
             System.out.println();
             System.out.println("Analizar Texto");
             System.out.println("1. Leer párrafo");
-            System.out.println("2. Guardar palabras en arreglo");
-            System.out.println("3. Mostrar palabras");
-            System.out.println("4. Mostrar top 5");
+            System.out.println("2. Mostrar Top 5 de palabras frecuentes");
             System.out.println("0. Volver");
             System.out.print("Opción: ");
             String opcion = scanner.nextLine().trim();
@@ -154,32 +150,11 @@ public class Main {
                 System.out.println("Ingrese un párrafo:");
                 String parrafo = scanner.nextLine();
                 texto = new Texto(parrafo);
-                palabrasGuardadas = false;
-                System.out.println("Párrafo leído.");
-            } else if ("0".equals(opcion)) {
-                volver = true;
-            } else if (texto == null) {
-                System.out.println("Primero debe leer un párrafo.");
-            } else if ("2".equals(opcion)) {
                 analizador.guardarPalabras(texto);
-                palabrasGuardadas = true;
-                System.out.println("Palabras guardadas en el arreglo.");
-            } else if ("3".equals(opcion)) {
-                if (!palabrasGuardadas) {
-                    System.out.println("Primero debe guardar las palabras.");
-                } else {
-                    String[] palabras = texto.getPalabras();
-                    if (palabras.length == 0) {
-                        System.out.println("(no se encontraron palabras)");
-                    } else {
-                        for (int i = 0; i < palabras.length; i++) {
-                            System.out.println((i + 1) + ". " + palabras[i]);
-                        }
-                    }
-                }
-            } else if ("4".equals(opcion)) {
-                if (!palabrasGuardadas) {
-                    System.out.println("Primero debe guardar las palabras.");
+                System.out.println("Párrafo leído y palabras guardadas en el arreglo.");
+            } else if ("2".equals(opcion)) {
+                if (texto == null) {
+                    System.out.println("Primero debe leer un párrafo.");
                 } else {
                     analizador.contarRepeticiones(texto);
                     int top = analizador.obtenerTop5(texto);
@@ -193,6 +168,8 @@ public class Main {
                         }
                     }
                 }
+            } else if ("0".equals(opcion)) {
+                volver = true;
             } else {
                 System.out.println("Opción no válida.");
             }
