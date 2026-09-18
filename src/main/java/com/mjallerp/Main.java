@@ -2,6 +2,8 @@ package com.mjallerp;
 
 import com.mjallerp.service.Arreglos;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Arreglos arreglos = new Arreglos();
@@ -18,5 +20,16 @@ public class Main {
         arreglos.multiplicarPorIndice();
         System.out.println("Valores multiplicados por su índice:");
         arreglos.mostrarConForClasico();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Valor a buscar: ");
+        int valor = scanner.nextInt();
+        int indice = arreglos.buscarLineal(valor);
+        if (indice >= 0) {
+            System.out.println("Encontrado en el índice " + indice);
+        } else {
+            System.out.println("No se encontró el valor");
+        }
+        scanner.close();
     }
 }
