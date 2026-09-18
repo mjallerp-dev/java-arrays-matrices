@@ -13,4 +13,18 @@ public class Arreglos {
         }
         return numeros;
     }
+
+    public void mostrarConForClasico() {
+        System.out.println("Recorrido con for clásico:");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("[" + i + "] = " + numeros[i]);
+        }
+    }
+
+    public void mostrarConForEach() {
+        System.out.println("Recorrido con for-each:");
+        for (int numero : numeros) {
+            System.out.println(numero);
+        }
+    }
 }
