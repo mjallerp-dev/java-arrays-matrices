@@ -103,10 +103,8 @@ public class Main {
             System.out.println();
             System.out.println("Gestión de Matrices");
             System.out.println("1. Crear matriz 3x3 (1 a 9)");
-            System.out.println("2. Imprimir como tabla");
-            System.out.println("3. Recorrer por columnas");
-            System.out.println("4. Sumar elementos");
-            System.out.println("5. Intercambiar primera y última fila");
+            System.out.println("2. Sumar elementos");
+            System.out.println("3. Intercambiar primera y última fila");
             System.out.println("0. Volver");
             System.out.print("Opción: ");
             String opcion = scanner.nextLine().trim();
@@ -115,19 +113,24 @@ public class Main {
                 matrices.crearMatriz();
                 creada = true;
                 System.out.println("Matriz creada.");
+                matrices.mostrarComoTabla();
+                matrices.recorrerPorColumnas();
+            } else if ("2".equals(opcion)) {
+                if (!creada) {
+                    System.out.println("Primero debe crear la matriz.");
+                } else {
+                    System.out.println("Suma de elementos: " + matrices.sumarElementos());
+                }
+            } else if ("3".equals(opcion)) {
+                if (!creada) {
+                    System.out.println("Primero debe crear la matriz.");
+                } else {
+                    matrices.intercambiarPrimeraYUltimaFila();
+                    System.out.println("Primera y última fila intercambiadas.");
+                    matrices.mostrarComoTabla();
+                }
             } else if ("0".equals(opcion)) {
                 volver = true;
-            } else if (!creada) {
-                System.out.println("Primero debe crear la matriz.");
-            } else if ("2".equals(opcion)) {
-                matrices.mostrarComoTabla();
-            } else if ("3".equals(opcion)) {
-                matrices.recorrerPorColumnas();
-            } else if ("4".equals(opcion)) {
-                System.out.println("Suma de elementos: " + matrices.sumarElementos());
-            } else if ("5".equals(opcion)) {
-                matrices.intercambiarPrimeraYUltimaFila();
-                System.out.println("Primera y última fila intercambiadas.");
             } else {
                 System.out.println("Opción no válida.");
             }

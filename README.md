@@ -85,11 +85,9 @@ Hay que **crear** el arreglo o la matriz (opción 1 del submenú) antes de las d
 
 ### Matrices (opción 2)
 
-1. Crear matriz 3x3 con valores 1 a 9.
-2. Imprimir como tabla.
-3. Recorrer por columnas.
-4. Sumar elementos → debe dar **45**.
-5. Intercambiar primera y última fila; volver a imprimir la tabla para ver el cambio.
+1. Crear matriz 3x3 con valores 1 a 9 (se imprime como tabla y se recorre por columnas).
+2. Sumar elementos → debe dar **45**.
+3. Intercambiar primera y última fila (se vuelve a mostrar la tabla).
 
 ### Analizar texto (opción 3)
 
